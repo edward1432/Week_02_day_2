@@ -92,7 +92,7 @@ public class Runner {
         for (int i = 0; i < numbers.size(); i++){
             if (numbers.get(i) == 1 && numbers.get(i++) == 1){
                 System.out.println(true);
-                return;
+                break;
             }
         }
 
@@ -101,7 +101,7 @@ public class Runner {
         int sum = 0;
 
         for (int i = 0; i < numbers.size(); i++){
-            sum =+ numbers.get(i);
+            sum += numbers.get(i);
         }
 
         System.out.println(sum);
@@ -110,6 +110,16 @@ public class Runner {
 //           ...except the number 13 is unlucky, so it does not count...
 //           ...and numbers that come immediately after a 13 also do not count
 //          HINT - You will need to track the index throughout the loop
+
+        int sumLucky = 0;
+
+        for (int i = 0; i < numbers.size(); i++){
+            if (numbers.get(i) != 13 && i > 0 && numbers.get(i--) != 13) {
+                sumLucky += numbers.get(i);
+            }
+        }
+
+        System.out.println(sumLucky);
 //
 //          So [7, 13, 2] would have sum of 9.
 
